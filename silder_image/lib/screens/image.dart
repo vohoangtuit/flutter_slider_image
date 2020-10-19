@@ -11,9 +11,9 @@ class ImageSliderDemo extends StatelessWidget {
       body: Container(
           child: CarouselSlider(
             options: CarouselOptions(),
-            items: imgList.map((item) => Container(
+            items: listProduct().map((item) => Container(
               child: Center(
-                  child: Image.network(item, fit: BoxFit.cover, width: 1000)
+                  child: Image.network(item.image, fit: BoxFit.cover, width: 1000)
               ),
             )).toList(),
           )

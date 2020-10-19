@@ -52,7 +52,7 @@ class _CarouselChangeReasonDemoState extends State<CarouselChangeReasonDemo> {
                       child: Text('→'),
                     ),
                   ),
-                  ...Iterable<int>.generate(imgList.length).map(
+                  ...Iterable<int>.generate(listProduct().length).map(
                         (int pageIndex) => Flexible(
                       child: RaisedButton(
                         onPressed: () => _controller.animateToPage(pageIndex),

@@ -46,7 +46,7 @@ class _ManuallyControlledSliderState extends State<ManuallyControlledSlider> {
                       child: Text('→'),
                     ),
                   ),
-                  ...Iterable<int>.generate(imgList.length).map(
+                  ...Iterable<int>.generate(listProduct().length).map(
                         (int pageIndex) => Flexible(
                       child: RaisedButton(
                         onPressed: () => _controller.animateToPage(pageIndex),

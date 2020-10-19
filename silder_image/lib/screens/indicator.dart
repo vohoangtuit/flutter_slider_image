@@ -18,7 +18,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
   @override
   Widget build(BuildContext context) {
-    image =imgList[_current];
+    image =listProduct()[_current].image;
     return Scaffold(
       appBar: baseAppBar('Carousel with indicator demo'),
       body: Column(
@@ -32,10 +32,10 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                   enlargeCenterPage: true,
                   aspectRatio: 2.0,
                   onPageChanged: (index, reason) {
-                    image =imgList[_current];
+                    image =listProduct()[_current].image;
                     setState(() {
                       _current = index;
-                      image =imgList[_current];
+                      image =listProduct()[_current].image;
                     });
                   }
               ),
@@ -48,8 +48,8 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: imgList.map((url) {
-                int index = imgList.indexOf(url);
+              children: listProduct().map((url) {
+                int index = listProduct().indexOf(url);
                 return Container(
                   width: 8.0,
                   height: 8.0,

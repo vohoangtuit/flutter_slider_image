@@ -16,7 +16,7 @@ class MultipleItemDemo extends StatelessWidget {
               enlargeCenterPage: false,
               viewportFraction: 1,
             ),
-            itemCount: (imgList.length / 2).round(),
+            itemCount: (listProduct().length / 2).round(),
             itemBuilder: (context, index) {
               final int first = index * 2;
               final int second = first + 1;
@@ -26,7 +26,7 @@ class MultipleItemDemo extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 10),
-                      child: Image.network(imgList[idx], fit: BoxFit.cover),
+                      child: Image.network(listProduct()[idx].image, fit: BoxFit.cover),
                     ),
                   );
                 }).toList(),
