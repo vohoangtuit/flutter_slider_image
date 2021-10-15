@@ -16,8 +16,8 @@ class MultipleItemDemo extends StatelessWidget {
               enlargeCenterPage: false,
               viewportFraction: 1,
             ),
-            itemCount: (listProduct().length / 2).round(),
-            itemBuilder: (context, index) {
+            itemCount: (imgList.length / 2).round(),
+            itemBuilder: (context, index, realIdx) {
               final int first = index * 2;
               final int second = first + 1;
               return Row(
@@ -26,14 +26,13 @@ class MultipleItemDemo extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 10),
-                      child: Image.network(listProduct()[idx].image, fit: BoxFit.cover),
+                      child: Image.network(imgList[idx], fit: BoxFit.cover),
                     ),
                   );
                 }).toList(),
               );
             },
-          )
-      ),
+          )),
     );
   }
 }

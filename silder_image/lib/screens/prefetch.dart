@@ -22,7 +22,7 @@ class _PrefetchImageDemoState extends State<PrefetchImageDemo> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
       images.forEach((imageUrl) {
         precacheImage(NetworkImage(imageUrl), context);
       });
@@ -42,15 +42,14 @@ class _PrefetchImageDemoState extends State<PrefetchImageDemo> {
               aspectRatio: 2.0,
               enlargeCenterPage: true,
             ),
-            itemBuilder: (context, index) {
+            itemBuilder: (context, index, realIdx) {
               return Container(
                 child: Center(
-                    child: Image.network(images[index], fit: BoxFit.cover, width: 1000)
-                ),
+                    child: Image.network(images[index],
+                        fit: BoxFit.cover, width: 1000)),
               );
             },
-          )
-      ),
+          )),
     );
   }
 }

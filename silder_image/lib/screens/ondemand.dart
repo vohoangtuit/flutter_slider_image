@@ -15,13 +15,12 @@ class OnDemandCarouselDemo extends StatelessWidget {
               enlargeCenterPage: true,
               autoPlay: true,
             ),
-            itemBuilder: (ctx, index) {
+            itemBuilder: (ctx, index, realIdx) {
               return Container(
                 child: Text(index.toString()),
               );
             },
-          )
-      ),
+          )),
     );
   }
 }
